@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>节流和防抖 | 小脚丫</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="小脚丫的blog">
+    <link rel="preload" href="/assets/css/0.styles.1d8a3d76.css" as="style"><link rel="preload" href="/assets/js/app.aea2ca44.js" as="script"><link rel="preload" href="/assets/js/2.d5554c93.js" as="script"><link rel="preload" href="/assets/js/77.11c79328.js" as="script"><link rel="prefetch" href="/assets/js/10.fca8a0b3.js"><link rel="prefetch" href="/assets/js/100.0c8d3de3.js"><link rel="prefetch" href="/assets/js/101.1ce6cae9.js"><link rel="prefetch" href="/assets/js/102.4ac5ffaf.js"><link rel="prefetch" href="/assets/js/103.4ec9b5e9.js"><link rel="prefetch" href="/assets/js/104.c7609284.js"><link rel="prefetch" href="/assets/js/105.6a78df51.js"><link rel="prefetch" href="/assets/js/106.485c9bf7.js"><link rel="prefetch" href="/assets/js/107.dc2923d3.js"><link rel="prefetch" href="/assets/js/108.29fbbfde.js"><link rel="prefetch" href="/assets/js/11.3a0ab95b.js"><link rel="prefetch" href="/assets/js/12.eaa7fb62.js"><link rel="prefetch" href="/assets/js/13.db887407.js"><link rel="prefetch" href="/assets/js/14.87db231a.js"><link rel="prefetch" href="/assets/js/15.27fbcab7.js"><link rel="prefetch" href="/assets/js/16.9dd2f2a4.js"><link rel="prefetch" href="/assets/js/17.35ad22e7.js"><link rel="prefetch" href="/assets/js/18.4939ba79.js"><link rel="prefetch" href="/assets/js/19.d3c4a69f.js"><link rel="prefetch" href="/assets/js/20.df3eeb35.js"><link rel="prefetch" href="/assets/js/21.76c7942b.js"><link rel="prefetch" href="/assets/js/22.0ad452fb.js"><link rel="prefetch" href="/assets/js/23.c4eb2677.js"><link rel="prefetch" href="/assets/js/24.c178e8f1.js"><link rel="prefetch" href="/assets/js/25.6d0cc137.js"><link rel="prefetch" href="/assets/js/26.8d5c0e4e.js"><link rel="prefetch" href="/assets/js/27.5a692e69.js"><link rel="prefetch" href="/assets/js/28.ab517df7.js"><link rel="prefetch" href="/assets/js/29.216a0764.js"><link rel="prefetch" href="/assets/js/3.f140abe3.js"><link rel="prefetch" href="/assets/js/30.c7814c21.js"><link rel="prefetch" href="/assets/js/31.018fe13d.js"><link rel="prefetch" href="/assets/js/32.4196b170.js"><link rel="prefetch" href="/assets/js/33.7efa1925.js"><link rel="prefetch" href="/assets/js/34.83a25206.js"><link rel="prefetch" href="/assets/js/35.749aa20c.js"><link rel="prefetch" href="/assets/js/36.22b595d2.js"><link rel="prefetch" href="/assets/js/37.da983e9f.js"><link rel="prefetch" href="/assets/js/38.1ee922d8.js"><link rel="prefetch" href="/assets/js/39.c94855d3.js"><link rel="prefetch" href="/assets/js/4.804fb23d.js"><link rel="prefetch" href="/assets/js/40.4ab184a7.js"><link rel="prefetch" href="/assets/js/41.0e9b48cb.js"><link rel="prefetch" href="/assets/js/42.aa4ab290.js"><link rel="prefetch" href="/assets/js/43.4540f310.js"><link rel="prefetch" href="/assets/js/44.804fae01.js"><link rel="prefetch" href="/assets/js/45.51273b70.js"><link rel="prefetch" href="/assets/js/46.a4297eef.js"><link rel="prefetch" href="/assets/js/47.c468f06f.js"><link rel="prefetch" href="/assets/js/48.100ad7ec.js"><link rel="prefetch" href="/assets/js/49.ff5579b1.js"><link rel="prefetch" href="/assets/js/5.5fca2fe7.js"><link rel="prefetch" href="/assets/js/50.5d57ccbb.js"><link rel="prefetch" href="/assets/js/51.f7f48ce1.js"><link rel="prefetch" href="/assets/js/52.92139c4d.js"><link rel="prefetch" href="/assets/js/53.0e6ed39c.js"><link rel="prefetch" href="/assets/js/54.a79e8fce.js"><link rel="prefetch" href="/assets/js/55.e4993030.js"><link rel="prefetch" href="/assets/js/56.88f04eb7.js"><link rel="prefetch" href="/assets/js/57.1ed415ab.js"><link rel="prefetch" href="/assets/js/58.fcfe10b4.js"><link rel="prefetch" href="/assets/js/59.84ac0202.js"><link rel="prefetch" href="/assets/js/6.bfa2a40f.js"><link rel="prefetch" href="/assets/js/60.63a4fa29.js"><link rel="prefetch" href="/assets/js/61.081aa9f8.js"><link rel="prefetch" href="/assets/js/62.d76d9650.js"><link rel="prefetch" href="/assets/js/63.546a9bca.js"><link rel="prefetch" href="/assets/js/64.19fc5167.js"><link rel="prefetch" href="/assets/js/65.8b4ef987.js"><link rel="prefetch" href="/assets/js/66.b98b070c.js"><link rel="prefetch" href="/assets/js/67.8eae566a.js"><link rel="prefetch" href="/assets/js/68.aaf0d47e.js"><link rel="prefetch" href="/assets/js/69.98f517bf.js"><link rel="prefetch" href="/assets/js/7.7da52f98.js"><link rel="prefetch" href="/assets/js/70.84a70084.js"><link rel="prefetch" href="/assets/js/71.df405b30.js"><link rel="prefetch" href="/assets/js/72.62cfab65.js"><link rel="prefetch" href="/assets/js/73.6b613dfc.js"><link rel="prefetch" href="/assets/js/74.ae171c79.js"><link rel="prefetch" href="/assets/js/75.4a0a5b81.js"><link rel="prefetch" href="/assets/js/76.5bad8f8a.js"><link rel="prefetch" href="/assets/js/78.1abb0609.js"><link rel="prefetch" href="/assets/js/79.8d1aecc6.js"><link rel="prefetch" href="/assets/js/8.fbda151a.js"><link rel="prefetch" href="/assets/js/80.ff5d9fbf.js"><link rel="prefetch" href="/assets/js/81.aa213de6.js"><link rel="prefetch" href="/assets/js/82.305e65d4.js"><link rel="prefetch" href="/assets/js/83.57fb6393.js"><link rel="prefetch" href="/assets/js/84.051bb7b2.js"><link rel="prefetch" href="/assets/js/85.c328c2d3.js"><link rel="prefetch" href="/assets/js/86.12611aca.js"><link rel="prefetch" href="/assets/js/87.8c4c1f50.js"><link rel="prefetch" href="/assets/js/88.50639c1c.js"><link rel="prefetch" href="/assets/js/89.1c574408.js"><link rel="prefetch" href="/assets/js/9.dbe9eea5.js"><link rel="prefetch" href="/assets/js/90.f5334e6f.js"><link rel="prefetch" href="/assets/js/91.f279ff1a.js"><link rel="prefetch" href="/assets/js/92.e22d6748.js"><link rel="prefetch" href="/assets/js/93.be5cddae.js"><link rel="prefetch" href="/assets/js/94.4509d3b3.js"><link rel="prefetch" href="/assets/js/95.831da00f.js"><link rel="prefetch" href="/assets/js/96.9a7fce6e.js"><link rel="prefetch" href="/assets/js/97.eba196fe.js"><link rel="prefetch" href="/assets/js/98.31ad631c.js"><link rel="prefetch" href="/assets/js/99.a5e475b1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1d8a3d76.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">小脚丫</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front/html/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/front/css/" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/front/javascript/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/front/es6/" class="nav-link">
+  Es6
+</a></li><li class="dropdown-item"><!----> <a href="/front/html5/" class="nav-link">
+  Html5
+</a></li><li class="dropdown-item"><!----> <a href="/front/vue/" class="nav-link">
+  Vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongoose/" class="nav-link">
+  mongoose
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  mysql
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title">其它</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/others/interview/" class="nav-link">
+  面试宝典
+</a></li><li class="dropdown-item"><!----> <a href="/others/tools/" class="nav-link">
+  开发工具
+</a></li></ul></div></div> <a href="https://github.com/tutu524606/tutu524606.github.io.git" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/front/html/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/front/css/" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/front/javascript/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/front/es6/" class="nav-link">
+  Es6
+</a></li><li class="dropdown-item"><!----> <a href="/front/html5/" class="nav-link">
+  Html5
+</a></li><li class="dropdown-item"><!----> <a href="/front/vue/" class="nav-link">
+  Vue
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongoose/" class="nav-link">
+  mongoose
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mysql/" class="nav-link">
+  mysql
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title">其它</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/others/interview/" class="nav-link">
+  面试宝典
+</a></li><li class="dropdown-item"><!----> <a href="/others/tools/" class="nav-link">
+  开发工具
+</a></li></ul></div></div> <a href="https://github.com/tutu524606/tutu524606.github.io.git" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>JAVASCRIPT</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/front/javascript/" class="sidebar-link">javascript 介绍</a></li><li><a href="/front/javascript/a-1.html" class="sidebar-link">量的声明</a></li><li><a href="/front/javascript/b-1.html" class="sidebar-link">操作符</a></li><li><a href="/front/javascript/c-1.html" class="sidebar-link">语句</a></li><li><a href="/front/javascript/d-1.html" class="sidebar-link">数据类型转换</a></li><li><a href="/front/javascript/e-1.html" class="sidebar-link">函数</a></li><li><a href="/front/javascript/f-1.html" class="sidebar-link">内置对象</a></li><li><a href="/front/javascript/g-1.html" class="sidebar-link">DOM</a></li><li><a href="/front/javascript/g-2.html" class="sidebar-link">虚拟 DOM</a></li><li><a href="/front/javascript/h-1.html" class="sidebar-link">事件</a></li><li><a href="/front/javascript/i-1.html" class="sidebar-link">BOM</a></li><li><a href="/front/javascript/j-1.html" class="sidebar-link">对象（Object）</a></li><li><a href="/front/javascript/k-1.html" class="sidebar-link">作用域</a></li><li><a href="/front/javascript/l-1.html" class="sidebar-link">原型链</a></li><li><a href="/front/javascript/m-1.html" class="sidebar-link">this</a></li><li><a href="/front/javascript/n-1.html" class="sidebar-link">call、apply、bind</a></li><li><a href="/front/javascript/o-1.html" class="sidebar-link">继承</a></li><li><a href="/front/javascript/p-1.html" class="sidebar-link">异常处理</a></li><li><a href="/front/javascript/q-1.html" class="sidebar-link">正则表达式</a></li><li><a href="/front/javascript/r-1.html" class="sidebar-link">JSON</a></li><li><a href="/front/javascript/s-1.html" class="sidebar-link">算法</a></li><li><a href="/front/javascript/t-1.html" class="active sidebar-link">节流和防抖</a></li><li><a href="/front/javascript/u-1.html" class="sidebar-link">深拷贝和浅拷贝</a></li><li><a href="/front/javascript/v-1.html" class="sidebar-link">跨域</a></li><li><a href="/front/javascript/w-1.html" class="sidebar-link">事件循环（event loop）</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="节流和防抖"><a href="#节流和防抖" class="header-anchor">#</a> 节流和防抖</h1></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/14/2020, 10:10:48 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/front/javascript/s-1.html" class="prev">
+        算法
+      </a></span> <span class="next"><a href="/front/javascript/u-1.html">
+        深拷贝和浅拷贝
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.aea2ca44.js" defer></script><script src="/assets/js/2.d5554c93.js" defer></script><script src="/assets/js/77.11c79328.js" defer></script>
+  </body>
+</html>
